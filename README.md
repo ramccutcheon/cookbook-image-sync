@@ -19,6 +19,7 @@ Usage
 node["image-sync"]["shared"]["secret_key"] 
 requires the creation of a 34-character alphanumeric secret
 can be created via `btsync-daemon --generate-secret`
+This should be set at the role or environment level, as it is shared among all peers
 
 License and Author
 ==================
