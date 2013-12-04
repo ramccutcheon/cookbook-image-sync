@@ -24,7 +24,7 @@ if Chef::Config[:solo]
 else
 known_hosts = []
 search(:node,"roles:openstack-image AND chef_environment:#{node.chef_environment}") do |n|
-  known_hosts << n["ipaddress"]
+  known_hosts << "#{n["ipaddress"]}:#{node['image-sync']['listening_port']}"
 end
 end
 
