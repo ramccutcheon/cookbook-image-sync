@@ -14,8 +14,13 @@ apt_repository "btsync" do
   key "D294A752"
 end
 
-package "btsync" do
+cookbook_file "btsync.preseed" do
+  path "/var/cache/debconf/btsync.preseed"
+end
+
+apt_package "btsync" do
   action :upgrade
+  response_file "/var/cache/debconf/btsync.preseed"
 end
 
 # Due to funky rack/net layout, auto discovery probably won't work

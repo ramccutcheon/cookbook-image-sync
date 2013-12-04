@@ -1,0 +1,22 @@
+btsync  btsync/webgui-password  password        AdminPassword
+btsync  btsync/webgui-username  string  admin
+btsync  btsync/sync_trash_ttl   string
+btsync  btsync/disk_low_priority        boolean true
+btsync  btsync/managed-configuration    boolean false
+btsync  btsync/webgui-bindport  string  8888
+btsync  btsync/daemon_umask     string
+btsync  btsync/recv_buf_size    string
+btsync  btsync/webgui-bindaddr  string  0.0.0.0
+btsync  btsync/send_buf_size    string
+btsync  btsync/device-name      string
+btsync  btsync/bind-port        string  0
+btsync  btsync/lan_use_tcp      boolean false
+btsync  btsync/folder_rescan_interval   string  600
+btsync  btsync/use-upnp boolean false
+btsync  btsync/max_file_size_diff_for_patching  string
+btsync  btsync/limit-download   string  0
+btsync  btsync/sync_max_time_diff       string
+btsync  btsync/limit-upload     string  0
+btsync  btsync/lan_encrypt_data boolean true
+btsync  btsync/max_file_size_for_versioning     string
+btsync  btsync/rate_limit_local_peers   boolean false
