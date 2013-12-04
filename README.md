@@ -16,10 +16,12 @@ The following cookbooks are dependencies
 Usage
 =====
 
-node["image-sync"]["shared"]["secret_key"] 
-requires the creation of a 34-character alphanumeric secret
+Requires the creation of a 34-character alphanumeric secret
 can be created via `btsync-daemon --generate-secret`
-This should be set at the role or environment level, as it is shared among all peers
+This is expected to be an encrypted data bag as such:
+
+    id: btsync
+    key: YOURPRIVATEKEY
 
 License and Author
 ==================

@@ -16,7 +16,7 @@ end
 
 package "btsync" do
   action :install
-  preseed_file "btsync.preseed"
+  response_file "btsync.preseed"
 end
 
 # Due to funky rack/net layout, auto discovery probably won't work
