@@ -19,7 +19,7 @@
 "shared_folders" :
         [
                 {
-                        "secret" : "<%= node["image-sync"]["shared"]["secret_key"] %>",
+                        "secret" : "<%= @secret_key %>",
                         "dir" : "<%= node["image-sync"]["shared"]["dir"] %>",
                         "use_relay_server" : <%= node["image-sync"]["shared"]["use_relay"] %>,
                         "use_dht" : <%= node["image-sync"]["shared"]["use_dht"] %>,
