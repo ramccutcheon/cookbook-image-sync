@@ -23,9 +23,6 @@ template "/etc/btsync/glance-cache.conf" do
   owner "root"
   group "root"
   mode 00600
-  variables(
-    :secret_key => 'AX476DB6CQVVOMVYIZMFXFLTTQVRBWQM3'
-  )
 end
 
 service 'btsync' do
