@@ -25,11 +25,11 @@
                         "use_relay_server" : <%= node["image-sync"]["shared"]["use_relay"] %>,
                         "use_dht" : <%= node["image-sync"]["shared"]["use_dht"] %>,
                         "search_lan" : <%= node["image-sync"]["shared"]["search_lan"] %>,
-                        "use_sync_trash" : <%= node["image-sync"]["shared"]["sync_trash"]
+                        "use_sync_trash" : <%= node["image-sync"]["shared"]["sync_trash"] %>
                         "known_hosts" :
                         [
                           <% @known_host.each do |ip| -%>
-                          "<%= ip %>:<%= node["image-sync"]["listening_port"] %>"
+                          "<%= ip %>:<%= node["image-sync"]["listening_port"] %>",
                           <% end -%>
                         ]
                 }

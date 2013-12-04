@@ -7,7 +7,7 @@
 include_recipe "apt"
 
 apt_repository "btsync" do
-  uri "http://ppa.launchpad.net/tuxpoldo/btsync"
+  uri "http://ppa.launchpad.net/tuxpoldo/btsync/ubuntu"
   distribution node["lsb"]["codename"]
   components ["main"]
   keyserver "keyserver.ubuntu.com"
@@ -22,9 +22,11 @@ end
 if Chef::Config[:solo]
   Chef::Log.warn("This recipe uses search, Chef Solo does not support search.")
 else
-known_hosts = search(:node,"roles:openstack-image AND chef_environment:#{node.chef_environment}") 
+known_hosts = []
+search(:node,"roles:openstack-image AND chef_environment:#{node.chef_environment}") do |n|
+  known_hosts << n["ipaddress"]
 end
-known_host_ip = known_hosts && known_hosts["ipaddress"]
+end
 
 template "/etc/btsync/glance-cache.conf" do
   source "glance-cache.conf.erb"
@@ -32,7 +34,7 @@ template "/etc/btsync/glance-cache.conf" do
   group "root"
   mode 00600
   variables(
-    :known_host => known_host_ip
+    :known_host => known_hosts
   )
 end
 
