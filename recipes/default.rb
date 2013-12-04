@@ -18,11 +18,22 @@ package "btsync" do
   action :upgrade
 end
 
+# Due to funky rack/net layout, auto discovery probably won't work
+if Chef::Config[:solo]
+  Chef::Log.warn("This recipe uses search, Chef Solo does not support search.")
+else
+known_hosts = search(:node,"roles:openstack-image AND chef_environment:#{node.chef_environment}") 
+end
+known_host_ip = known_hosts && known_hosts["ipaddress"]
+
 template "/etc/btsync/glance-cache.conf" do
   source "glance-cache.conf.erb"
   owner "root"
   group "root"
   mode 00600
+  variables(
+    :known_host => known_host_ip
+  )
 end
 
 service 'btsync' do
