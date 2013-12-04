@@ -28,6 +28,7 @@ search(:node,"roles:openstack-image AND chef_environment:#{node.chef_environment
   known_hosts << "#{n['ipaddress']}:#{node['image-sync']['listening_port']}"
 end
 end
+secret_key = Chef::EncryptedDataBagItem.load("secrets", "btsync")
 
 template "/etc/btsync/glance-cache.conf" do
   source "glance-cache.conf.erb"
@@ -35,7 +36,8 @@ template "/etc/btsync/glance-cache.conf" do
   group "root"
   mode 00600
   variables(
-    :known_host => known_hosts
+    :known_host => known_hosts,
+    :secret_key => secret_key["key"]
   )
 end
 
