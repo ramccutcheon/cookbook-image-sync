@@ -27,7 +27,7 @@
                         "use_sync_trash" : <%= node["image-sync"]["shared"]["sync_trash"] %>,
                         "known_hosts" :
                         [
-                          <% @known_host.map{ |s| %Q{"#{s}"} }.join(', ') %>
+                          <%= @known_host.map{ |s| %Q{"#{s}"} }.join(', ') %>
                         ]
                 }
         ]
