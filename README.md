@@ -23,6 +23,11 @@ This is expected to be an encrypted data bag as such:
     id: btsync
     key: YOURPRIVATEKEY
 
+Testing
+=======
+
+See SilverLining documentation
+
 License and Author
 ==================
 
