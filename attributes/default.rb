@@ -19,3 +19,4 @@ default["image-sync"]["shared"]["use_relay"] = false
 default["image-sync"]["shared"]["use_dht"] = false
 default["image-sync"]["shared"]["search_lan"] = true
 default["image-sync"]["shared"]["sync_trash"] = false
+default["image-sync"]["shared"]["use_tracker"] = false
