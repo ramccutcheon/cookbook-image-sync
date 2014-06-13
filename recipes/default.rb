@@ -33,8 +33,8 @@ secret_key = Chef::EncryptedDataBagItem.load("secrets", "btsync")
 template "/etc/btsync/glance-cache.conf" do
   source "glance-cache.conf.erb"
   owner "root"
-  group "root"
-  mode 00600
+  group "glance"
+  mode 00640
   variables(
     :known_host => known_hosts,
     :secret_key => secret_key["key"]
