@@ -1,10 +1,9 @@
-{
-  "sources": {
-    "image-sync": {
-      "path": "."
-    },
-    "apt": {
-      "locked_version": "2.3.8"
-    }
-  }
-}
+DEPENDENCIES
+  image-sync
+    path: .
+    metadata: true
+
+GRAPH
+  apt (2.4.0)
+  image-sync (0.0.11)
+    apt (>= 0.0.0)
